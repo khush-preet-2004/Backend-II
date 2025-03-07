@@ -1,0 +1,27 @@
+{
+    "Men": [
+      { "id": 1, "name": "Casual Shirt", "price": 40, "description": "Stylish and comfortable casual shirt.", "category": "Men", "image": "/images/casual shirt.jpg" },
+      { "id": 2, "name": "Formal Trousers", "price": 60, "description": "Perfect for office wear.", "category": "Men", "image": "/images/formal trousers.jpg" },
+      { "id": 3, "name": "Denim Jacket", "price": 80, "description": "Trendy denim jacket for all occasions.", "category": "Men", "image": "/images/denim jacket.jpg" },
+      { "id": 4, "name": "Leather Jacket", "price": 100, "description": "Classic black leather jacket.", "category": "Men", "image": "/images/leather jacket.jpg" },
+      { "id": 5, "name": "Polo T-Shirt", "price": 30, "description": "Casual and sporty polo tee.", "category": "Men", "image": "/images/polo t-shirt.jpg" },
+      { "id": 6, "name": "Sweatshirt", "price": 50, "description": "Warm and comfy sweatshirt.", "category": "Men", "image": "/images/sweatshirt.jpg" }
+    ],
+    "Women": [
+      { "id": 7, "name": "Evening Gown", "price": 70, "description": "Elegant evening gown.", "category": "Women", "image": "/images/Evening gown.jpg" },
+      { "id": 8, "name": "Crop Top", "price": 80, "description": "Trendy crop top.", "category": "Women", "image": "/images/crop top.jpg" },
+      { "id": 9, "name": "Casual Top", "price": 40, "description": "Everyday casual wear.", "category": "Women", "image": "/images/casual top .jpg" },
+      { "id": 10, "name": "Stylish Skirt", "price": 50, "description": "Perfect for any occasion.", "category": "Women", "image": "/images/skirt.jpg" },
+      { "id": 11, "name": "Maxi Dress", "price": 90, "description": "Floral printed maxi dress.", "category": "Women", "image": "/images/Maxi dress.jpg" },
+      { "id": 12, "name": "Hoodie", "price": 45, "description": "Warm hoodie for winter.", "category": "Women", "image": "/images/women hoodie.jpg" }
+    ],
+    "Kids": [
+      { "id": 13, "name": "T-Shirts", "price": 20, "description": "Colorful kids' T-shirts.", "category": "Kids", "image": "/images/t-shirts.jpg" },
+      { "id": 14, "name": "Cartoon Hoodie", "price": 35, "description": "Hoodie with cartoon characters.", "category": "Kids", "image": "/images/cartoonhoodie.jpg" },
+      { "id": 15, "name": "Denim Shorts", "price": 25, "description": "Trendy denim shorts.", "category": "Kids", "image": "/images/denimshorts.jpg" },
+      { "id": 16, "name": "Ethnic Wear", "price": 30, "description": "Traditional wear for kids.", "category": "Kids", "image": "/images/ethnicwear.jpg" },
+      { "id": 17, "name": "Sweatpants", "price": 30, "description": "Comfortable sweatpants.", "category": "Kids", "image": "/images/sweatpants.jpg" },
+      { "id": 18, "name": "Winter Coat", "price": 60, "description": "Warm coat for kids.", "category": "Kids", "image": "/images/wintercoat.jpg" }
+    ]
+  }
+  

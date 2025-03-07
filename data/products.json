@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Men's Jacket",
+        "category": "Men",
+        "price": 59.99,
+        "image": "men jacket.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Women's Dress",
+        "category": "Women",
+        "price": 49.99,
+        "image": "women dress.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Kids' T-shirt",
+        "category": "Kids",
+        "price": 19.99,
+        "image": "kids T-shirt.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Men's Jeans",
+        "category": "Men",
+        "price": 39.99,
+        "image": "men jeans.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Women's Blazer",
+        "category": "Women",
+        "price": 69.99,
+        "image": "women Blazer.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Kids' Hoodie",
+        "category": "Kids",
+        "price": 29.99,
+        "image": "kids hoodie.jpg"
+    }
+]
