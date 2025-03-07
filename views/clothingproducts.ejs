@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">All Clothing Products</h2>
+    <div class="row">
+        <% for (const category in products) { %>
+            <h3 class="mt-4"><%= category %>'s Collection</h3>
+            <div class="row">
+                <% products[category].slice(0, 6).forEach(product => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>" style="height: 250px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><%= product.name %></h4>
+                                <p class="text-muted">$<%= product.price %></p>
+                                <p><%= product.description %></p>
+                                <form action="/cart/add" method="POST">
+                                    <input type="hidden" name="id" value="<%= product.id %>">
+                                    <input type="hidden" name="name" value="<%= product.name %>">
+                                    <input type="hidden" name="price" value="<%= product.price %>">
+                                    <input type="hidden" name="image" value="<%= product.image %>">
+                                    <button type="submit" class="btn btn-primary w-100">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

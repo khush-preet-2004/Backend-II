@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/public/css/payment.css"> <!-- Link to external CSS if needed -->
+</head>
+<body>
+<div class="checkout-container">
+    <div class="delivery-info">
+        <h2>Delivery Information</h2>
+        <form action="/place-order" method="POST">
+            <input type="hidden" name="username" value="<%= username ? username : '' %>">
+
+            
+
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+
+            <label>Full Name</label>
+            <input type="text" name="fullname" required>
+
+            <label>Address</label>
+            <input type="text" name="address" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required>
+
+            <h3>Payment Method</h3>
+            <label><input type="radio" name="payment" value="Card" id="cardOption"> Credit Card</label>
+            <label><input type="radio" name="payment" value="PayPal" id="paypalOption"> PayPal</label>
+            <label><input type="radio" name="payment" value="NetBanking" id="netBankingOption"> Net Banking</label>
+            <label><input type="radio" name="payment" value="COD" id="codOption"> Cash on Delivery (COD)</label>
+
+            <div id="cardDetails" class="hidden">
+                <label>Account Holder Name</label>
+                <input type="text" name="accountHolder" placeholder="Name">
+                <label>Account Number</label>
+                <input type="text" name="accountNumber" placeholder="Account Number">
+                <label>CVV</label>
+                <input type="password" name="cvv" placeholder="CVV">
+            </div>
+
+            <div id="netBankingDetails" class="hidden">
+                <label>Select Your Bank</label>
+                <select name="bank">
+                    <option value="">Select Bank</option>
+                    <option value="SBI">State Bank of India</option>
+                    <option value="HDFC">HDFC Bank</option>
+                    <option value="ICICI">ICICI Bank</option>
+                    <option value="Axis">Axis Bank</option>
+                </select>
+                <label>Account Number</label>
+                <input type="text" name="netBankingAccount" placeholder="Enter your account number">
+            </div>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+
+<script>
+   
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const paymentOptions = document.getElementsByName("payment");
+        const cardDetails = document.getElementById("cardDetails");
+        const netBankingDetails = document.getElementById("netBankingDetails");
+
+        function hideAllPaymentFields() {
+            cardDetails.style.display = "none";
+            netBankingDetails.style.display = "none";
+        }
+
+        paymentOptions.forEach(option => {
+            option.addEventListener("change", function () {
+                hideAllPaymentFields();
+                if (option.value === "Card") {
+                    cardDetails.style.display = "block";
+                } else if (option.value === "NetBanking") {
+                    netBankingDetails.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

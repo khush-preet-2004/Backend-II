@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Our Products</h2>
+
+    <!-- Men Products -->
+    <h3 class="mt-4">Men's Collection</h3>
+    <div class="row">
+        <% products.filter(product => product.category === "Men").forEach(product => { %>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 mb-4">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><%= product.name %></h4>
+                        <p class="text-muted">$<%= product.price %></p>
+                        <p><%= product.description %></p>
+                        <button class="btn btn-success">Buy Now</button>
+                        <% if (user && user.role === "admin") { %>
+                            <form action="/products/delete/<%= product.id %>" method="POST" class="mt-2">
+                                <button type="submit" class="btn btn-danger w-100">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <!-- Women Products -->
+    <h3 class="mt-4">Women's Collection</h3>
+    <div class="row">
+        <% products.filter(product => product.category === "Women").forEach(product => { %>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 mb-4">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><%= product.name %></h4>
+                        <p class="text-muted">$<%= product.price %></p>
+                        <p><%= product.description %></p>
+                        <button class="btn btn-success">Buy Now</button>
+                        <% if (user && user.role === "admin") { %>
+                            <form action="/products/delete/<%= product.id %>" method="POST" class="mt-2">
+                                <button type="submit" class="btn btn-danger w-100">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <!-- Accessories -->
+    <h3 class="mt-4">Accessories</h3>
+    <div class="row">
+        <% products.filter(product => product.category === "Accessories").forEach(product => { %>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 mb-4">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><%= product.name %></h4>
+                        <p class="text-muted">$<%= product.price %></p>
+                        <p><%= product.description %></p>
+                        <button class="btn btn-success">Buy Now</button>
+                        <% if (user && user.role === "admin") { %>
+                            <form action="/products/delete/<%= product.id %>" method="POST" class="mt-2">
+                                <button type="submit" class="btn btn-danger w-100">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <% if (user && user.role === "admin") { %>
+        <h3 class="mt-5 text-center">Add a New Product</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/products/add" method="POST" class="p-4 border rounded shadow-sm bg-light">
+                    <input type="text" class="form-control mb-3" name="name" placeholder="Product Name" required />
+                    <input type="number" class="form-control mb-3" name="price" placeholder="Price" required />
+                    <textarea class="form-control mb-3" name="description" placeholder="Description"></textarea>
+                    <input type="text" class="form-control mb-3" name="category" placeholder="Category (Men, Women, Accessories)" required />
+                    <input type="text" class="form-control mb-3" name="image" placeholder="Image URL" required />
+                    <button type="submit" class="btn btn-primary w-100">Add Product</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

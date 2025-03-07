@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <h2 class="text-center">🚚 Track Your Order</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/order-track" method="POST" class="p-4 border rounded">
+                <label>Enter Order ID</label>
+                <input type="text" name="orderId" class="form-control mb-3" required>
+                <button type="submit" class="btn btn-primary w-100">Track Order</button>
+            </form>
+        </div>
+    </div>
+
+    <% if (order) { %>
+        <div class="mt-5">
+            <h4>Order Status: <span class="badge bg-success"><%= order.status %></span></h4>
+            <p>Estimated Delivery: <%= order.deliveryDate %></p>
+            <h5>Order Details</h5>
+            <ul>
+                <% order.items.forEach(item => { %>
+                    <li><%= item.name %> - <%= item.quantity %> x $<%= item.price %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>
