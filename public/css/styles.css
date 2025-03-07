@@ -1,0 +1,36 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.navbar {
+    background-color: #ff0400;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
